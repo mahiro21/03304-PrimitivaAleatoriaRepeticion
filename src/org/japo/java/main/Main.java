@@ -15,29 +15,34 @@
  */
 package org.japo.java.main;
 
+import java.util.Random;
+
 /**
  *
  * @author Mario Merlos Abella <mario.merlos.alum@iescamp.es>
  */
-
-
 public class Main {
+
+    public static final Random RND = new Random();
 
     public static void main(String[] args) {
 
         //variables & Constantes
+        final int P_MAX = 39;
+        final int P_MIN = 1;
         final int MAX = 9;
         final int INI = 0;
         int numero;
-
         //Estado inicial
         numero = INI;
         //Inicio bucle
         do {
             numero++;
-            System.out.println(numero);
+            int primitiva = RND.nextInt(P_MAX - P_MIN + 1) + P_MIN;
+            System.out.printf("Número %d ...: %d%n", numero, primitiva );
+            
 
-        } while (numero < MAX );
+        } while (numero < MAX);
         System.out.println("END");
     }
 }
